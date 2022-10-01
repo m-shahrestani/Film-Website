@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud HW</title>
+</head>
+<body>
+<h1>{{ film.name }}</h1>
+{% for comment in comments %}
+    <p>{{ comment }}</p>
+    <hr>
+{% endfor %}
+<a href="{% url 'show_comments' film_id=film.id %}?language=es"><button>Spanish</button></a>
+<a href="{% url 'show_comments' film_id=film.id %}?language=de"><button>German</button></a>
+<a href="{% url 'show_comments' film_id=film.id %}?language=ja"><button>Japanese</button></a>
+</body>
+</html>

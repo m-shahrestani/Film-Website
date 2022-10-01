@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud HW</title>
+</head>
+<body>
+{% for film in films %}
+    <img src="{{ film.poster }}">
+    <h1>{{ film.name }}</h1>
+    <p>{{ film.director }}</p>
+    <form action="{% url 'add_comment' film_id=film.id %}">
+        <input type="submit" value="Add comment"/>
+    </form>
+    <form action="{% url 'show_comments' film_id=film.id %}">
+        <input type="submit" value="Show comments"/>
+    </form>
+    <hr>
+{% endfor %}
+</body>
+</html>
